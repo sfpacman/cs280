@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/cs280.dir/Count3sProcessSerial.cpp.o  -o cs280 

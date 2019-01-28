@@ -1,0 +1,15 @@
+//
+Name: Pak Yu
+
+Course: CS280
+
+CRN: 39072-831
+Assignment:  Count3sProcessSerial.cpp
+
+Date: 1/28/2019
+//
+
+#ifndef CS280_COUNT3SPROCESSSERIAL_H
+#define CS280_COUNT3SPROCESSSERIAL_H
+
+#endif //CS280_COUNT3SPROCESSSERIAL_H

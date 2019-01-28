@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yup/ccsf/cs280/Count3sProcessSerial.cpp
+iostream
+-
+fstream
+-
+cstdlib
+-
+string
+-
+climits
+-
+
