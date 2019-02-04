@@ -14,11 +14,11 @@ Date: 1/28/2019
 #include <fstream>
 #include <cstdlib>
 #include <string>
-#include <climits>
+#include "Count3sProcessSerial.h"
 
 using namespace std;
 
-int array_size;
+
 
 int32_t* store_array(  string file_path){
     ifstream file (file_path, ios::in | ios::binary);
@@ -61,7 +61,7 @@ int main() {
     int size=0;
     int count =0;
     int a;
-	input="/home/yup/ccsf/cs280/threesData.bin";
+	input="threesData.bin";
 
 	int *arr= store_array(input);
 	int c = count_three(arr);
