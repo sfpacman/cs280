@@ -1,0 +1,36 @@
+/*
+Name: Pak Yu
+
+Course: CS280
+
+CRN: 39072-831
+Assignment:  Count3sProcessSerial.txt
+
+Date: 2/5/2019
+*/
+Program Goal:
+This program will read a binary file of 32-bit integers and store the valid integers into an array.
+The program will then execute two concurrent and outputs the total occurrence of number 3 found in the binary file.
+
+
+Organization Design:
+
+
+Functions are written to accomplish for three purposes: input( store_array), counting( count_three) and cocurrency(split_array_pos).
+
+The function store_array is designed to take the path of the binary file as input and return an array of valid 4-byte integers.
+
+Once the array is returned, the split_array_pos function will then calculate the position for each partition.
+
+For the child process, the function count_three is then taken the array and counts the number 3 within the input range of the array which output the count of number 3 to a temp file.
+
+For the parent process, the function count_three will return the count of the first partition. Then, the parent process will read the numbers in the temp file which then compute and output the total count of three.
+
+Implantation:
+Even though the program was originally intended to have the capacity to handle multiple forks, as reflected by most of the functions,
+this program can only handle two processes.
+It is due to the difficulty of managing multiple forks without any interprocess communication as well as the time constraint.
+It is particularly difficult to keep track of the outputs of the child process(s).
+The use of exit code was considered but deemed impractical as it has only 255 values.
+Therefore, I chose to output the result of the child process to a text file in which the parent process can read and combine the results.
+
