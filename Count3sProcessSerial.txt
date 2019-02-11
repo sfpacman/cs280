@@ -12,7 +12,6 @@ Program Goal:
 This program will read a binary file of 32-bit integers and store the valid integers into an array.
 The program then outputs the total occurrence of number 3 found in the binary file.
 
-
 Organization Design:
 Two functions are written to accomplish the goal: store_array and count_three.
 The function store_array is designed to take the path of the binary file as input and return an array of valid 4-byte integers.
@@ -25,3 +24,5 @@ Another option for storing the size of the array is to add the count as the firs
 Since I don't know if the content of the array will be validated or not, I decide to declare the count as a global variable.
 The algorithm of counting number three is fairly straightforward.
 It goes through the elements sequentially and counts the occurrences of number three.
+
+
