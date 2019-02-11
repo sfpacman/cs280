@@ -12,7 +12,7 @@ Date: 1/28/2019
 #ifndef CS280_COUNT3SPROCESSSERIAL_H
 #define CS280_COUNT3SPROCESSSERIAL_H
 #include <string>
-using namespace std;
+
 
 int32_t* store_array( string file_path);
 int count_three( int arr[]);

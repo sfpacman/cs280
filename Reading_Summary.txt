@@ -1,0 +1,14 @@
+/*
+Name: Pak Yu
+
+Course: CS280
+
+CRN: 39072-831
+Assignment:Reading Summary- Linux Process Model
+
+Date: 2/4/2019
+*/
+
+In Unix, a process is originally defined as any running program that permits to execute on the CPU exclusively.  It is also used as a fundamental scheduling unit for the operating system. However, when the concept of threads was introduced, threads replaces the process as the basic scheduling unit at the kernel level in which a process becomes a collection of threads shared with the same resources in most of the Unix systems which results in a two-tiered system of thread and process. However, in Linux, a process remains to be the only scheduling unit. To overcome the differences,  each process in Linux is only uniquely identified by the execution location. Each subsequent process (child process) created by the original process (parent process) would have the total control of the shared resources available to both processes. Practically speaking, both models do not differ in most cases. In fact, in a single-thread process, both term process and thread is interchangeable. 
+
+A process can be described in several attributes. First, for identification, each running process has a Process ID  (pid)  that has a data type pid_t. For system security,  a User ID (uid) and group ID (gid) are assigned to each process, so the OS can manage the accessibility/privilege of the particular process to the system. Additional special uids or gids can be found in a process, such as fsuid and real uid for specific purposes. In addition,   command-line arguments and environment variables of the process are also stored in a kernel for passing information from parent to child process. In Linux, fork() or clone()  are the functions to make new processes. Both parent and child process shared almost all the same properties, except the return values. When calling fork() function, the parent process returns with the child pid, while the child process returns zero. When the child process is finished, the parent process is then notified which triggers the kernel to terminate the child process. Until then, the exit code of the child process is stored at the kernel which in effect keep the process active, known as a zombie process. If the parent process exits before the child process is finished, the child process then becomes an orphan process which automatically assigns to the child process of the init process, so that it can be removed for the new next reboot of the machine.  A new process can be created by using exec() function after fork() function.The exec() function essentially resets the process into a new process. For convenience, vfork() function can be used instead of a combination of fork() and exec() function.
