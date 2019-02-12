@@ -12,6 +12,8 @@ Assignment:  Count3sThreadParallel.cpp
 #ifndef CS280_COUNT3STHREADPARALLEL_H
 #define CS280_COUNT3STHREADPARALLEL_H
 
+#include <string>
+
 typedef struct
 {
     int32_t *arr;
@@ -19,7 +21,7 @@ typedef struct
     int     count_sum;
 } num_collection;
 
-int32_t* store_array(  string file_path);
+int32_t* store_array(  std::string file_path);
 void *count_three( void (*arg));
 
 #endif //CS280_COUNT3STHREADPARALLEL_H

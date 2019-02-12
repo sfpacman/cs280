@@ -11,16 +11,17 @@ Date: 2/10/2019
 
 Program Goal:
 This program will read a binary file of 32-bit integers and store the valid integers into an array.
-The program then use pthread library to peforms muti-threading computation and  outputs the total occurrence of number 3 found in the binary file.
+The program then uses pthread library to perform muti-threading computation and outputs the total occurrence of number 3 found in the binary file.
 
 Organization Design:
 Two functions are written to accomplish the goal: store_array and count_three.
-one object , num_collection is written to store the array and its attributes.
+one class, num_collection is written to store the array and its attributes.
 The function store_array is designed to take the path of the binary file as input and return an array of valid 4-byte integers in which it will be stored in num_collection.arr.
 The length of the array is stored in num_collection.len
 4 threads are then created and execute count_three function.
-In each threads, count_three access the array from num_collection and counts the number 3 in the array which update the total count of number 3 stored in num_collection.
+In each thread, count_three access the array from num_collection and counts the number 3 in the array which updates the total count of number 3 stored in num_collection.
 
 Implantation:
-In this implantation, I use an object to store all the necessary data of the array ( the array, the length and the count of 3), so that the array can be stored
-
+In this implantation, I use a global object, num_array ,to store all the necessary data of the array ( the array, the length and the count of 3), so that each thread can modify the object.
+In order to avoid miscalculation, mutexes is used in count_three function to prevent threads writing to the num_array.count_sum at the same time.
+Function pthread_join is used in main to wait for all threads to finish to prevent unexpected termination of the process.

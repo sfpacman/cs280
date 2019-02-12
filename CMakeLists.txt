@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+#cmake_minimum_required(VERSION 3.13)
 project(cs280)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -13,6 +13,7 @@ include_directories(.)
 
 add_executable(cs280
         threesData.bin
+        Count3sProcessParallel.h
         Count3sThreadParallel.cpp)
 
 target_link_libraries(cs280 Threads)
