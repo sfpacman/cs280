@@ -1,0 +1,22 @@
+/*
+Name: Pak Yu
+
+Course: CS280
+
+CRN: 39072-831
+Assignment: Reading Summary- Pointers
+
+Date: 2/11/2019
+*/
+
+A pointer in C++ is a special variable that stores the memory address of another variable. An asterisk notation is used
+to identify the variable as a pointer of a specified type. For example, "float *var" means var is a pointer to a float
+variable.  It should be noted that pointer should be initialized with either nullptr or  NULL. Otherwise, the pointer
+will affect some unknown location in memory.  When a pointer is assigned to an address of another variable, address
+operator (&) is used. When you call the pointer variable, the pointer will return the value of the assigned address of
+the variable. Likewise, if a value is assigned to a pointer (with an asterisk in front of the pointer variable), the
+value will be passed to the referenced variable. In a function, a pointer can be used in a  function parameter in a
+similar fashion as a reference variable. Also,  a function can return a pointer . For example, when a pointer points to
+a function that returns a float value, the pointer will be treated as a float variable. In pthread module,  when a
+thread is created with pthread_create(), any arguments have to be passed through as a type void pointer.  Therefore, any
+ functions that passed to the thread has to return pointer as well.
