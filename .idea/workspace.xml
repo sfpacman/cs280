@@ -12,10 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75d3d478-6efe-4ee5-aab4-c34ced5b46f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Count3sProcessThread.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Count3sIPC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Count3sIPC.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,20 +28,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Count3sProcessParallel.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="97" column="6" lean-forward="true" selection-start-line="97" selection-end-line="98" selection-end-column="24" />
+            <state relative-caret-position="1455">
+              <caret line="97" column="6" selection-start-line="97" selection-end-line="98" selection-end-column="24" />
               <folding>
                 <element signature="e#123#142#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Count3sProcessParallel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -69,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Count3sIPC.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
+            <state relative-caret-position="-2242">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding>
                 <element signature="e#94#113#0" expanded="true" />
               </folding>
@@ -81,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Count3sThreadParallel.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
+            <state relative-caret-position="1320">
               <caret line="88" column="20" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="24" />
               <folding>
                 <element signature="e#123#142#0" expanded="true" />
@@ -95,7 +84,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>cout</find>
+      <find>SEM_USER_2</find>
     </findStrings>
+    <replaceStrings>
+      <replace>CHILD_1</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,9 +114,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="244" />
+    <option name="x" value="197" />
     <option name="y" value="27" />
-    <option name="width" value="1289" />
+    <option name="width" value="1279" />
     <option name="height" value="701" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -131,20 +124,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="cs280" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs280" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -199,12 +179,13 @@
       <workItem from="1549706167385" duration="16670000" />
       <workItem from="1549849028808" duration="7761000" />
       <workItem from="1550433905685" duration="1193000" />
-      <workItem from="1550520709818" duration="20782000" />
+      <workItem from="1550520709818" duration="21458000" />
+      <workItem from="1550638392801" duration="6296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109673000" />
+    <option name="totallyTimeSpent" value="116645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -216,22 +197,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28223574" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.28172386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4771987" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4762419" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30237582" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297414" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.23542117" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3574514" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.23542117" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3563715" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.40820736" />
@@ -337,10 +318,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Count3sThreadParallel.cpp">
+    <entry file="file://$PROJECT_DIR$/Count3sProcessParallel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="88" column="20" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="24" />
+        <state relative-caret-position="176">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Count3sProcessParallel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" column="6" selection-start-line="97" selection-end-line="98" selection-end-column="24" />
           <folding>
             <element signature="e#123#142#0" expanded="true" />
           </folding>
@@ -354,13 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Count3sProcessParallel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -368,10 +349,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Count3sProcessParallel.cpp">
+    <entry file="file://$PROJECT_DIR$/Count3sThreadParallel.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="97" column="6" lean-forward="true" selection-start-line="97" selection-end-line="98" selection-end-column="24" />
+        <state relative-caret-position="1320">
+          <caret line="88" column="20" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="24" />
           <folding>
             <element signature="e#123#142#0" expanded="true" />
           </folding>
@@ -380,8 +361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Count3sIPC.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
+        <state relative-caret-position="-2242">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
             <element signature="e#94#113#0" expanded="true" />
           </folding>

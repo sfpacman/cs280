@@ -62,9 +62,8 @@ void* MapSharedMemory(int id)
 {
     void* addr;
     assert(id != 0); /* Idiot-proof the call. */
-    addr = shmat(id, NULL, 0); /* Attach the segment...
-*/
-    shmctl(id, IPC_RMID, NULL); /* ...and mark it destroyed. */
+    addr = shmat(id, NULL, 0); /* Attach the segment*/
+     /* ...and mark it destroyed. */
     return addr;
 }
 
@@ -126,8 +125,8 @@ void UnlockSemaphore(int id, int i)
 }
 enum
 {
-    SEM_USER_1,
-    SEM_USER_2
+    PARENT,
+    CHILD_1
 };
 
 int32_t* store_array(  string file_path, num_collection& array ){
@@ -155,13 +154,15 @@ int32_t* store_array(  string file_path, num_collection& array ){
     int32_t *result = arr;
     return result ;
 }
-int count_three( num_collection nun_array, int &interval){
+int count_three( num_collection &num_array, int interval){
     //cout << "process_id: " << id << "start at: " << start << " to " << start+ interval << "\n";
     int count =0;
-    for ( int i = nun_array.start ; i < num_array.start+ interval ; i++) {
-        if( num_arrat.arr[i] == 3 ){count++;}
+    int end = num_array.start+ interval;
+    for ( int i = num_array.start ; i < end ; i++) {
+        if( num_array.arr[i] == 3 ){count++;}
     }
-    return  count;
+    num_array.start = end;
+    return count;
 }
 
 int main() {
@@ -173,6 +174,7 @@ int main() {
 
     // variables for shared memory
     int shmem_id;
+    int semaphore_id;
     char* buf_address;
     int *arr= store_array(input,num_array);
     num_array.arr = arr;
@@ -181,30 +183,38 @@ int main() {
     shmem_id = AllocateSharedMemory(bufsize);
     buf_address = (char*) MapSharedMemory(shmem_id);
     *((num_collection *) buf_address )= num_array;
-    //*((int *) buf_address) = 0;
+    unsigned short vals[2];
+    vals[PARENT] = 0;
+    vals[CHILD_1] = 0;
+    semaphore_id = CreateSemaphoreSet(2, vals);
+    int temp_count;
 
 
     for ( int i = 0; i < fork_loop ; i++) {
         pid_t pid = fork();
         if (pid == 0) {
+
           num_collection temp = *( (num_collection *) buf_address);
-          count_three(,temp)
+          temp.start += interval;
+          UnlockSemaphore( semaphore_id, CHILD_1 );
           *( (num_collection *) buf_address) = temp;
+
+          temp.count_sum += count_three(temp,interval);
+          LockSemaphore( semaphore_id, CHILD_1);
+          UnlockSemaphore( semaphore_id, PARENT);
 
           cout << pid << "\t" << temp.count_sum << "\n";
           exit(0);
         }
         else {
 
-            int exitstat = -1;
-            wait(&exitstat);
             num_collection temp = *((num_collection *) buf_address);
-            cout << pid << "\t" << temp.count_sum << "\n";
-            temp.count_sum += 11;
-            cout<< pid <<"\t" << temp.count_sum << "\n";
+            temp.count_sum += count_three(temp,temp.len);
+            //cout << pid << "\t" << temp.count_sum << "\n";
+            cout << temp.count_sum << "\n";
 
               }
-
+        DeleteSemaphoreSet(semaphore_id);
     }
 
 
